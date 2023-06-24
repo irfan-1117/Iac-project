@@ -9,7 +9,7 @@ pipeline {
         stage('Terraform init') {
             steps { 
                 script {
-                    sh 'cd ${WORKSPACE}/vpc'
+                    sh 'cd ${WORKSPACE}/vpc/main.tf'
                     sh 'terraform init'
                 }
             }
