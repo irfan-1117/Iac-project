@@ -22,10 +22,7 @@ pipeline {
            
         stage('Terraform init') {
             steps { 
-                git branch: 'development', url: 'https://github.com/irfan-1117/vpc-projects.git'
-                sh 'cd vpc'
-                sh 'ls -lrta'
-                sh 'terraform init'
+                sh 'cd ${WORKSPACE}/vpc'
             }
         }
     }
