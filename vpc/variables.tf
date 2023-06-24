@@ -1,6 +1,6 @@
 variable "cidr_block" {
-  description = "cidr for the vpc for eg 10.10.0.0/16 or 10.10.0.0/24"
-  type        = string
+  description = "cidr for the vpc for eg 10.10.0.0/16"
+  default = "10.10.0.0/16"
 }
 
 variable "ingress" {
