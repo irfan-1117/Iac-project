@@ -14,8 +14,7 @@ pipeline {
         stage('Terraform init') {
             steps { 
                 script {
-                    //sh 'cd ${WORKSPACE}/vpc'
-                    dir('vpc') {
+                    dir('terraform') {
                     sh 'terraform init'
                     }    
                 }
