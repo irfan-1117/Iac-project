@@ -22,7 +22,9 @@ pipeline {
            
         stage('Terraform init') {
             steps { 
-                sh 'cd ${WORKSPACE}/vpc'
+                script {
+                    sh 'cd ${WORKSPACE}/vpc'
+                }
             }
         }
     }
