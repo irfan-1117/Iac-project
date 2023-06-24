@@ -14,7 +14,8 @@ pipeline {
         stage('Terraform init') {
             steps { 
                 script {
-                    dir('terraform') {
+                    dir('vpc') {
+                    sh 'ls -lrta'    
                     sh 'terraform init'
                     }    
                 }
