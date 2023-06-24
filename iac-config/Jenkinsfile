@@ -20,7 +20,7 @@ pipeline {
             }
         }
            
-        stage('aws-cli') {
+        stage('aws-vpc') {
             steps {
                sh  'aws s3 ls'
             }
