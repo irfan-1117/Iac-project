@@ -11,14 +11,6 @@ pipeline {
               cleanWs()
               }
            }
-
-        stage ('Checkout-scm') {
-            steps {
-                script {
-                    git branch: 'development', url: 'https://github.com/irfan-1117/vpc-projects.git'
-                }
-            }
-        }
            
         stage('Terraform init') {
             steps { 
