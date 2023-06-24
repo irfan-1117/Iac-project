@@ -22,8 +22,9 @@ pipeline {
            
         stage('Terraform init') {
             steps { 
-               sh 'cd ./vpc'
+               sh 'cd ${WORKSPACE}/vpc/'
                 sh 'ls -lrta'
+                sh 'terraform init'
             }
         }
     }
