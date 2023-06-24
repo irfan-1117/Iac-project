@@ -20,9 +20,10 @@ pipeline {
             }
         }
            
-        stage('aws-vpc') {
+        stage('Terraform init') {
             steps {
-               sh  'aws s3 ls'
+               sh 'cd ${WORKSPACE}/vpc'
+                sh 'terraform init'
             }
         }
     }
