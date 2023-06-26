@@ -6,18 +6,6 @@ pipeline {
       }
 
     stages {
-        stage('Clean workspace') {
-            steps {
-               cleanWs()
-            }
-        }
-
-        stage('Checkout-SCM') {
-            steps {
-                git branch: 'development', url: 'https://github.com/irfan-1117/vpc-projects.git'
-            }
-        }
-        
         stage('Terraform init') {
             steps { 
                 script {
@@ -34,8 +22,19 @@ pipeline {
                 script {
                     sh '''
                       cd vpc
-                      terraform destroy -auto-approve
-                 '''
+                      terraform apply -auto-approve
+                '''
+                }
+            }
+        }
+
+        stage('Terraform Destroy') {
+            steps {
+                script {
+                   sh '''
+                     cd vpc 
+                     terraform destroy -auto-approve
+                '''
                 }
             }
         }
