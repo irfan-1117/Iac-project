@@ -6,7 +6,7 @@ pipeline {
       }
 
     stages {
-        stage('AWS-ec2') {
+        /*stage('AWS-ec2') {
             steps { 
                 script {
                     sh '''
@@ -15,7 +15,7 @@ pipeline {
                 '''
                 }
             }
-        }       
+        }*/     
         
         /*stage('Terraform apply') {
             steps { 
@@ -26,17 +26,17 @@ pipeline {
                 '''
                 }
             }
-        }
+        }*/
 
-        stage('Terraform Destroy') {
+        stage('Terraform Destroy ec2') {
             steps {
                 script {
                    sh '''
-                     cd vpc 
+                     cd webserver
                      terraform destroy -auto-approve
                 '''
                 }
             }
-        }*/
+        }
     }
 }
