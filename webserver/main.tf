@@ -1,4 +1,4 @@
-data "aws_ami" "ubuntu_22" {
+data "aws_ami" "ubuntu22" {
   owners = ["559769862091"]
   filter {
     name   = "tag:Name"
@@ -7,7 +7,7 @@ data "aws_ami" "ubuntu_22" {
 }
 resource "aws_instance" "ubuntu22" {
   for_each      = toset(var.instance_type)
-  ami           = data.aws_ami.ubuntu_22.id
+  ami           = data.aws_ami.ubuntu22.id
   instance_type = each.value
   key_name      = aws_key_pair.aws_key_pair.key_name
   tags = {
