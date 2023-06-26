@@ -6,7 +6,7 @@ pipeline {
       }
 
     stages {
-        stage('Terraform init') {
+        stage('AWS-ec2') {
             steps { 
                 script {
                     sh '''
