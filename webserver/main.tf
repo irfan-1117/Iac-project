@@ -29,7 +29,6 @@ resource "aws_ebs_volume" "volume" {
   tags = {
     Name = "irfan-${each.value}"
   }
-
 }
 resource "aws_volume_attachment" "volume" {
   for_each     = toset(var.instance_type)
