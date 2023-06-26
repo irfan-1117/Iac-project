@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "devops" {
-  vpc_id      = data.aws_vpc.devops.id
+  vpc_id      = aws_vpc.vpc.id
   name        = "devops"
   description = "security group for devops"
   tags = {
