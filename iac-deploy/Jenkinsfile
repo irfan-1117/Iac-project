@@ -33,6 +33,7 @@ pipeline {
             steps { 
                 script {
                     sh '''
+                      cd vpc
                       terraform apply -auto-approve
                  '''
                 }
