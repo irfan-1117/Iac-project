@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    
+    tools {
+      terraform 'Terraform'
+      }
+
+    stages {
+        stage('Terraform init') {
+            steps { 
+                script {
+                    sh '''
+                      cd webserver
+                      terraform init && terraform apply -auto-approve
+                '''
+                }
+            }
+        }       
+        
+        /*stage('Terraform apply') {
+            steps { 
+                script {
+                    sh '''
+                      cd vpc
+                      terraform apply -auto-approve
+                '''
+                }
+            }
+        }
+
+        stage('Terraform Destroy') {
+            steps {
+                script {
+                   sh '''
+                     cd vpc 
+                     terraform destroy -auto-approve
+                '''
+                }
+            }
+        }*/
+    }
+}
